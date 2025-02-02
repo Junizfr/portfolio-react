@@ -33,25 +33,40 @@ function App() {
 
   useEffect(() => {
     const cercle = document.getElementById('cercle');
+    let mouseX = 0, mouseY = 0;
+    let posX = 0, posY = 0;
+    let rafId = null;
 
     const handleMouseMove = (event) => {
-        const { pageX: x, pageY: y, clientX, clientY } = event;
-        const rect = cercle.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+        mouseX = event.pageX;
+        mouseY = event.pageY;
+    };
 
-        const angle = Math.atan2(clientY - centerY, clientX - centerX) * (180 / Math.PI);
-        cercle.style.left = `${x}px`;
-        cercle.style.top = `${y}px`;
+    const updateCirclePosition = () => {
+        posX += (mouseX - posX) * 0.15; // Accélération plus douce
+        posY += (mouseY - posY) * 0.15;
+
+        const rect = cercle.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2 + window.scrollX;
+        const centerY = rect.top + rect.height / 2 + window.scrollY;
+
+        const angle = Math.atan2(posY - centerY, posX - centerX) * (180 / Math.PI);
+
+        cercle.style.left = `${posX}px`;
+        cercle.style.top = `${posY}px`;
         cercle.style.setProperty('--rotation', `${angle}deg`);
+
+        rafId = requestAnimationFrame(updateCirclePosition);
     };
 
     document.addEventListener('mousemove', handleMouseMove);
+    updateCirclePosition(); // Lancer l'animation en continu
 
     return () => {
         document.removeEventListener('mousemove', handleMouseMove);
+        cancelAnimationFrame(rafId);
     };
-  }, []);
+}, []);
 
 
   return (
