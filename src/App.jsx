@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const typed = new Typed("#typed-text", {
       strings: [
-        "Développeur Front-end",
+        "Développeur Fullstack",
         "Passionné par le Web",
         "En constante évolution",
       ],
@@ -67,7 +67,6 @@ function App() {
         cancelAnimationFrame(rafId);
     };
 }, []);
-
 
   return (
     <div>
