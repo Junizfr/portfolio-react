@@ -686,3 +686,28 @@ footer {
     border: 1px solid var(--primary);
     font-weight: 500;
 }
+
+#cercle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: solid 1px var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#cercle::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary);
+    transform-origin: center;
+    transform: rotate(var(--rotation, 0deg)) translate(0, -10px);
+    border-radius: 50%;
+}

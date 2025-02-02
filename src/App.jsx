@@ -31,6 +31,29 @@ function App() {
     gsap.from(".animate", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
   }, []);
 
+  useEffect(() => {
+    const cercle = document.getElementById('cercle');
+
+    const handleMouseMove = (event) => {
+        const { pageX: x, pageY: y, clientX, clientY } = event;
+        const rect = cercle.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const angle = Math.atan2(clientY - centerY, clientX - centerX) * (180 / Math.PI);
+        cercle.style.left = `${x}px`;
+        cercle.style.top = `${y}px`;
+        cercle.style.setProperty('--rotation', `${angle}deg`);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+
   return (
     <div>
       <Navbar />
