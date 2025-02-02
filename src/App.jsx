@@ -90,7 +90,7 @@ function App() {
                         Bonjour ! Je suis développeur web junior basé à Dunkerque. 
                         Actuellement en formation, je me spécialise dans la création 
                         d'applications web modernes et intuitives. Passionné par le 
-                        développement front-end et le design d'interface, je cherche 
+                        développement fullstack et le design d'interface, je cherche 
                         constamment à améliorer mes compétences et à relever de 
                         nouveaux défis.
                     </p>
