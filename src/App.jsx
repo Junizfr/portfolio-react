@@ -105,9 +105,9 @@ function App() {
                         </a>
                     </div>
                     <div className="social-links">
-                        <a href="#" className="social-link"><FontAwesomeIcon icon={faGithub} /></a>
-                        <a href="#" className="social-link"><FontAwesomeIcon icon={faLinkedin} /></a>
-                        <a href="#" className="social-link"><FontAwesomeIcon icon={faTwitter} /></a>
+                        <a href="https://github.com/Junizfr" className="social-link" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+                        <a href="https://www.linkedin.com/in/alexismarquis/" className="social-link" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
+                        <a href="https://x.com/Juniz_FR" className="social-link" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a>
                     </div>
                 </div>
             </div>
