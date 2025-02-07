@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Typed from "typed.js";
 import { gsap } from "gsap";
-import "./styles/global.css";
+import './App.css'
 import meImg from './assets/images/me.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';

@@ -78,6 +78,12 @@ function Projects() {
                                 ))}
                             </div>
                             <div className="modal-description" dangerouslySetInnerHTML={{ __html: selectedProject.long_description }}></div>
+                            
+                            <div className="modal-actions">
+                                {selectedProject.demo && (
+                                    <a className="btn" href={selectedProject.demo} target="_blank">Voir le projet</a>
+                                )}
+                            </div>
                         </div>
                     </div>
                 )}
